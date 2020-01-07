@@ -107,7 +107,7 @@ def make_stats(result_file, ps, IWA, OWA, min_radius, max_radius, min_flux, max_
 	data_hab = data[:, habitable_mask]
 	stype_arr_hab = stype_arr[habitable_mask]
 	#We write the results for habitable planets in a file
-	logfile = open("stats_habitable_" + result_file, "w")
+	logfile = open("Stats/stats_habitable_" + result_file, "w")
 	logfile.write('nstar\tstype\ta\tang_sep\tRp\tFinc\tdist\tPorb\tF560W\tF1000W\tF1500W\tobs_time\n')
 	for i in range(len(data_hab[0])):
 		logfile.write(str(data_hab[0][i]) + "\t" + str(stype_arr_hab[i]) + "\t" + str(data_hab[2][i]) + "\t" + str(data_hab[3][i]) + "\t" +  str(data_hab[4][i]) + "\t"+ str(data_hab[5][i])+ "\t"  + str(data_hab[6][i]) + "\t"+ str(data_hab[7][i])+ "\t"+ str(data_hab[8][i])+ "\t"+ str(data_hab[9][i])+ "\t"+ str(data_hab[10][i]) + "\t" + str(data_hab[11][i]) +"\n")
@@ -115,7 +115,7 @@ def make_stats(result_file, ps, IWA, OWA, min_radius, max_radius, min_flux, max_
 
 	#We also write the results for total planets in another file
 
-	logfile = open("stats_tot_" + result_file, "w")
+	logfile = open("Stats/stats_tot_" + result_file, "w")
 	logfile.write('nstar\tstype\ta\tang_sep\tRp\tFinc\tdist\tPorb\tF560W\tF1000W\tF1500W\tobs_time\n')
 	for i in range(len(data[0])):
 		logfile.write(str(data[0][i]) + "\t" + str(stype_arr[i]) + "\t" + str(data[2][i]) + "\t" + str(data[3][i]) + "\t" +  str(data[4][i]) + "\t"+ str(data[5][i]) + "\t"+   str(data[6][i]) + "\t"+ str(data[7][i]) +"\t"+ str(data[8][i]) +"\t"+ str(data[9][i]) +"\t"+ str(data[10][i]) + "\t" + str(data[11][i]) + "\n")

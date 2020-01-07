@@ -49,8 +49,8 @@ stypes = ["A","M", "F", "G", "K"]
 
 #We load the planet tables and fluxes into the script
 print("Loading the tables..")
-planet_sample = planet_sampler_pop.PlanetSample(planet_table, dataset = "SAG")
-planet_sample.append_fluxes(flux_table, dataset = "SAG")
+planet_sample = planet_sampler_pop.PlanetSample("Data/" + planet_table, dataset = "SAG")
+planet_sample.append_fluxes("Data/" + flux_table, dataset = "SAG")
 
 # We run the optimization
 print("Computing the baseline..")

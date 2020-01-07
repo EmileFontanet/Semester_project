@@ -23,7 +23,7 @@ exptime_default = 35000
 
 # MAIN
 #==============================================================================
-planets = open(planets_path, 'r')
+planets = open('Stats/' + planets_path, 'r')
 planets_lines = planets.readlines()
 
 # Initialize lists
@@ -213,7 +213,7 @@ for it, mask in enumerate(masks):
   #ax_histx.set_yticklabels([0, 80, 160, 240], fontsize=12)
   ax_histy.xaxis.grid(b=True, which='both')
 
-  plt.savefig(planets_path[0:-4]  + ' hist2d' + hist2d_labels[it] + '.pdf', bbox_inches='tight')
+  plt.savefig('Plots/' + planets_path[0:-4]  + ' hist2d' + hist2d_labels[it] + '.pdf', bbox_inches='tight')
   plt.close()
 
 
@@ -328,7 +328,7 @@ plt.ylabel('Expected number of detectable planets', fontsize=12)
 plt.gca().yaxis.grid(True)
 plt.legend(loc='upper right', fontsize=12)
 
-plt.savefig(planets_path[0:-4]  + 'waterfall.pdf', bbox_inches='tight')
+plt.savefig('Plots/' + planets_path[0:-4]  + 'waterfall.pdf', bbox_inches='tight')
 plt.close()
 
 
@@ -446,5 +446,5 @@ sens10_patch = patches.Patch(facecolor='white', edgecolor='black', hatch='o', la
 sens100_patch = patches.Patch(facecolor='white', edgecolor='black', hatch='O', label='Sens$\cdot$100')
 plt.legend(handles=[base_patch, sens10_patch, sens100_patch], loc='upper left')
 
-plt.savefig('habitable.pdf', bbox_inches='tight')
+plt.savefig('Plots/' + 'habitable.pdf', bbox_inches='tight')
 plt.close()
